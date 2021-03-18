@@ -1,0 +1,18 @@
+ version: '3.3'
+ services:
+  app-site:
+    container_name: app-site
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    image: app-site:latest
+    ports:
+      - 8080:80
+  backend-service:
+    container_name: backend-service
+    build:
+      context: java
+      dockerfile: Dockerfile
+    image: backend-service:latest
+    ports:
+      - 8081:8090
